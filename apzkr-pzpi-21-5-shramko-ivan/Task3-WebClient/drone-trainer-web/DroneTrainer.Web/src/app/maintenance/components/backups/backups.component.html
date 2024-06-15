@@ -1,0 +1,30 @@
+<div class="container pt-4">
+  <h2>{{ "maintenance.backups.title" | translate }}</h2>
+  <button class="btn btn-primary mb-3" (click)="createBackup()">
+    {{ "maintenance.backups.createButton" | translate }}
+  </button>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>{{ "maintenance.backups.table.id" | translate }}</th>
+        <th>{{ "maintenance.backups.table.fileName" | translate }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let backup of backups">
+        <td>{{ backup.id }}</td>
+        <td>{{ backup.fileName }}</td>
+        <td>
+          <button class="btn btn-primary">
+            <a
+              class="link-light link-underline-opacity-0"
+              [href]="getDownloadBackupLink(backup.fileName)"
+              >{{ "maintenance.backups.table.download" | translate }}</a
+            >
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

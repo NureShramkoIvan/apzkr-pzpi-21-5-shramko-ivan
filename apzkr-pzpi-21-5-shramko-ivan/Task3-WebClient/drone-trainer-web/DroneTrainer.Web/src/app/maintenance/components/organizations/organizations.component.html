@@ -1,0 +1,28 @@
+<div class="container pt-4">
+  <h2>{{ "maintenance.organizations.title" | translate }}</h2>
+  <button class="btn btn-primary mb-3" (click)="openCreateUpdateModal()">
+    {{ "maintenance.organizations.createButton" | translate }}
+  </button>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>{{ "maintenance.organizations.table.id" | translate }}</th>
+        <th>{{ "maintenance.organizations.table.name" | translate }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let organization of organizations">
+        <td>{{ organization.id }}</td>
+        <td>{{ organization.name }}</td>
+        <td>
+          <button
+            class="btn btn-primary"
+            (click)="viewDevices(organization.id)"
+          >
+            {{ "maintenance.organizations.table.devices" | translate }}
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,29 @@
+<h2 mat-dialog-title>
+  {{ "maintenance.organizationCreateUpdateModal.title" | translate }}
+</h2>
+<mat-dialog-content class="organization-create-update-modal">
+  <form [formGroup]="organizationForm" (ngSubmit)="submitForm()">
+    <div class="form-group">
+      <label for="name">{{
+        "maintenance.organizationCreateUpdateModal.form.name" | translate
+      }}</label>
+      <input
+        type="text"
+        id="name"
+        formControlName="name"
+        class="form-control"
+        required
+      />
+    </div>
+    <button
+      type="submit"
+      class="btn btn-primary w-100 my-1"
+      [disabled]="!organizationForm.valid"
+    >
+      {{
+        "maintenance.organizationCreateUpdateModal.form.submitButton"
+          | translate
+      }}
+    </button>
+  </form>
+</mat-dialog-content>

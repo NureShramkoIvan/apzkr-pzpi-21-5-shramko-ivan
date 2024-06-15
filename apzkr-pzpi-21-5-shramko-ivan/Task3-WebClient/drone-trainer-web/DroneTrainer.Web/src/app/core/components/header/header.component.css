@@ -1,0 +1,34 @@
+.header {
+  background-color: #f8f9fa;
+  padding: 10px;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 1.5em;
+}
+
+.header nav {
+  margin-top: 10px;
+}
+
+.header ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  gap: 15px;
+}
+
+.header li {
+  display: inline;
+}
+
+.header a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.header a:hover {
+  text-decoration: underline;
+}

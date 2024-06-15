@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="DroneTrainer.Mobile.Application.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:DroneTrainer.Mobile.Application.Pages"
+    Shell.FlyoutBehavior="Disabled"
+    Title="DroneTrainer.Mobile.Application">
+
+    <ShellContent Route="home" ContentTemplate="{DataTemplate local:HomePage}" Title=""/>
+    <ShellContent Route="login" ContentTemplate="{DataTemplate local:LoginPage}" Title=""/>
+    <ShellContent Route="session" ContentTemplate="{DataTemplate local:SessionPage}" Title=""/>
+    <Shell.TitleView>
+        <HorizontalStackLayout>
+            <Label Text="{Binding PageTitle}" FontSize="24" FontAttributes="Bold"/>
+            <Picker SelectedIndexChanged="PickerSelectedIndexChanged" ItemsSource="{Binding Langs}">
+                <Picker.SelectedIndex>0</Picker.SelectedIndex>
+            </Picker>
+            <Button Text="{Binding LocalizationResourseManager[LogOutButton]}" Clicked="OnLogout"/>
+        </HorizontalStackLayout>
+    </Shell.TitleView>
+</Shell>

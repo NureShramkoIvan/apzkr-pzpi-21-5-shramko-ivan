@@ -1,0 +1,72 @@
+<h2 mat-dialog-title>
+  {{ "maintenance.viewOrganizationDevicesModal.title" | translate }}
+</h2>
+<mat-dialog-content class="view-organization-devices-modal">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>
+          {{ "maintenance.viewOrganizationDevicesModal.table.id" | translate }}
+        </th>
+        <th>
+          {{
+            "maintenance.viewOrganizationDevicesModal.table.type" | translate
+          }}
+        </th>
+        <th>
+          {{
+            "maintenance.viewOrganizationDevicesModal.table.uniqueId"
+              | translate
+          }}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let device of organizationDevices">
+        <td>{{ device.id }}</td>
+        <td>{{ device.type }}</td>
+        <td>{{ device.deviceUniqueId }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>
+    {{ "maintenance.viewOrganizationDevicesModal.form.title" | translate }}
+  </h2>
+  <form [formGroup]="deviceForm" (ngSubmit)="submitForm()">
+    <div class="form-group">
+      <label for="deviceUniqueId">{{
+        "maintenance.viewOrganizationDevicesModal.form.uniqueId" | translate
+      }}</label>
+      <input
+        type="text"
+        id="deviceUniqueId"
+        formControlName="deviceUniqueId"
+        class="form-control"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="deviceType">{{
+        "maintenance.viewOrganizationDevicesModal.form.type" | translate
+      }}</label>
+      <select
+        id="deviceType"
+        formControlName="type"
+        class="form-control"
+        required
+      >
+        <option [value]="1">Gate</option>
+      </select>
+    </div>
+    <button
+      type="submit"
+      class="btn btn-primary w-100 my-1"
+      [disabled]="!deviceForm.valid"
+    >
+      {{
+        "maintenance.viewOrganizationDevicesModal.form.submitButton" | translate
+      }}
+    </button>
+  </form>
+</mat-dialog-content>

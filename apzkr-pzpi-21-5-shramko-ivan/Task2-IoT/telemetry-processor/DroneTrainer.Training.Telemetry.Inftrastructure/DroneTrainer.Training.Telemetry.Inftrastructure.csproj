@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Azure.Messaging.ServiceBus" Version="7.17.5" />
+    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DroneTrainer.Training.Telemetry.Core\DroneTrainer.Training.Telemetry.Core.csproj" />
+    <ProjectReference Include="..\DroneTrainer.Training.Telemetry.DataAccess.SqlServer\DroneTrainer.Training.Telemetry.DataAccess.SqlServer.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,62 @@
+<div class="header">
+  <div class="container">
+    <h1 class="my-3"><strong>DRONE TRAINER</strong></h1>
+    <nav *ngIf="isLoggedIn">
+      <div class="row">
+        <div class="col-11">
+          <ul class="d-flex align-items-center m-0 h-100">
+            <li *ngIf="isInstructorOrAdmin">
+              <a
+                class="link-underline-opacity-0"
+                routerLink="./training/sessions"
+                >{{ "core.header.navBar.trainingSessions" | translate }}</a
+              >
+            </li>
+            <li *ngIf="isInstructorOrAdmin">
+              <a
+                class="link-underline-opacity-0"
+                routerLink="./training/programs"
+                >{{ "core.header.navBar.trainingPrograms" | translate }}</a
+              >
+            </li>
+            <li *ngIf="isInstructorOrAdmin">
+              <a
+                class="link-underline-opacity-0"
+                routerLink="./training/groups"
+                >{{ "core.header.navBar.trainingGroups" | translate }}</a
+              >
+            </li>
+            <li *ngIf="isAdmin">
+              <a
+                class="link-underline-opacity-0"
+                routerLink="./maintenance/organizations"
+                >{{ "core.header.navBar.organizations" | translate }}</a
+              >
+            </li>
+            <li *ngIf="isAdmin">
+              <a
+                class="link-underline-opacity-0"
+                routerLink="./maintenance/users"
+                >{{ "core.header.navBar.users" | translate }}</a
+              >
+            </li>
+            <li *ngIf="isAdmin">
+              <a
+                class="link-underline-opacity-0"
+                routerLink="./maintenance/backups"
+                >{{ "core.header.navBar.backups" | translate }}</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="col-1">
+          {{ "core.header.language" | translate }}
+          <select [(ngModel)]="locale" (change)="onLocaleChange($event)">
+            <option value="en-US">English</option>
+            <option value="uk-UA">Українська</option>
+          </select>
+        </div>
+      </div>
+    </nav>
+  </div>
+</div>

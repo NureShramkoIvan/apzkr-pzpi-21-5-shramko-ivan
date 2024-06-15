@@ -1,0 +1,21 @@
+syntax  = "proto3";
+
+option csharp_namespace = "DroneTrainer.Training.Service";
+
+import "google/protobuf/duration.proto";
+
+service TrainingResult {
+	rpc GetUserTrainingResult(UserTrainingResultRequest) returns (UserTrainingResultResponse);
+}
+
+message UserTrainingResultRequest {
+	int32 user_id = 1;
+	int32 session_id = 2;
+}
+
+message UserTrainingResultResponse {
+	double successfull_gates_percent = 1;
+	double unsuccessfull_gates_percent = 2;
+	google.protobuf.Duration session_completion_time = 3;
+	double user_success_coefficient = 4;
+}

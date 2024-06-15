@@ -1,0 +1,22 @@
+<div class="training-group">
+  <h2>{{ "training.trainingGroup.title" | translate }}</h2>
+  <button class="btn btn-primary mb-3" (click)="openAddParticipationModal()">
+    {{ "training.trainingGroup.createParticipationButton" | translate }}
+  </button>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>{{ "training.trainingGroup.table.id" | translate }}</th>
+        <th>{{ "training.trainingGroup.table.username" | translate }}</th>
+        <th>{{ "training.trainingGroup.table.organization" | translate }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let participant of groupParticipants">
+        <td>{{ participant.userId }}</td>
+        <td>{{ participant.userName }}</td>
+        <td>{{ participant.organizationName }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

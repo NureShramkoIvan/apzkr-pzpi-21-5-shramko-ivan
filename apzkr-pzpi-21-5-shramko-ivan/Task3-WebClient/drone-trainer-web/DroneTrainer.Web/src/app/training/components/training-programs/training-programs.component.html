@@ -1,0 +1,28 @@
+<div class="container pt-4">
+  <h2>{{ "training.trainingPrograms.title" | translate }}</h2>
+  <button class="btn btn-primary" (click)="openCreateDialog()">
+    {{ "training.trainingPrograms.createButton" | translate }}
+  </button>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>{{ "training.trainingPrograms.table.id" | translate }}</th>
+        <th>
+          {{ "training.trainingPrograms.table.organization" | translate }}
+        </th>
+        <!-- <th>Actions</th> -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let program of trainingPrograms">
+        <td>{{ program.id }}</td>
+        <td>{{ program.organizationName }}</td>
+        <td>
+          <button class="btn btn-secondary" (click)="viewDetails(program.id)">
+            {{ "training.trainingPrograms.table.view" | translate }}
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

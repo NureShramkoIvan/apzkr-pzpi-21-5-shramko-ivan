@@ -1,0 +1,30 @@
+<div class="container pt-4">
+  <h2>{{ "training.trainingSessions.title" | translate }}</h2>
+  <button class="btn btn-primary" (click)="openCreateDialog()">
+    {{ "training.trainingSessions.createButton" | translate }}
+  </button>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>{{ "training.trainingSessions.table.id" | translate }}</th>
+        <th>{{ "training.trainingSessions.table.group" | translate }}</th>
+        <th>{{ "training.trainingSessions.table.program" | translate }}</th>
+        <th>{{ "training.trainingSessions.table.instructor" | translate }}</th>
+        <th>{{ "training.trainingSessions.table.scheduledAt" | translate }}</th>
+        <th>{{ "training.trainingSessions.table.start" | translate }}</th>
+        <th>{{ "training.trainingSessions.table.finish" | translate }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let session of trainingSessions">
+        <td>{{ session.id }}</td>
+        <td>{{ session.groupId }}</td>
+        <td>{{ session.programId }}</td>
+        <td>{{ session.instructorId }}</td>
+        <td>{{ session.scheduledAt | date : "short" }}</td>
+        <td>{{ session.startedAt | date : "short" }}</td>
+        <td>{{ session.finishedAt | date : "short" }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

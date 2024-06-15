@@ -1,0 +1,33 @@
+<div class="container-fluid d-flex justify-content-center align-items-center">
+  <div class="login-form p-4">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="username">{{ "auth.login.username" | translate }}</label>
+        <input
+          type="text"
+          class="form-control"
+          id="username"
+          formControlName="username"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="password">{{ "auth.login.password" | translate }}</label>
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          formControlName="password"
+          required
+        />
+      </div>
+      <button
+        type="submit"
+        class="btn btn-primary"
+        [disabled]="loginForm.invalid"
+      >
+        {{ "auth.login.signIn" | translate }}
+      </button>
+    </form>
+  </div>
+</div>

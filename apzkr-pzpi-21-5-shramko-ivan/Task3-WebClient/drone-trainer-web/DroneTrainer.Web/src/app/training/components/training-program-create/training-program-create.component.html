@@ -1,0 +1,90 @@
+<div class="training-program-create">
+  <h2 mat-dialog-title>
+    {{ "training.trainingProgramCreateModal.title" | translate }}
+  </h2>
+  <mat-dialog-content>
+    <form [formGroup]="trainingProgramForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="organization">{{
+          "training.trainingProgramCreateModal.form.organization" | translate
+        }}</label>
+        <select
+          formControlName="organizationId"
+          class="form-control"
+          (change)="onOrganizationChange()"
+        >
+          <option *ngFor="let org of organizations" [value]="org.id">
+            {{ org.name }}
+          </option>
+        </select>
+      </div>
+
+      <hr />
+
+      <div formArrayName="steps">
+        <div
+          *ngFor="let step of steps.controls; let i = index"
+          [formGroupName]="i"
+          class="form-group"
+        >
+          <h4>
+            <strong>
+              {{
+                "training.trainingProgramCreateModal.form.steps.title"
+                  | translate
+              }}
+              {{ i + 1 }}</strong
+            >
+          </h4>
+          <label for="position">{{
+            "training.trainingProgramCreateModal.form.steps.position"
+              | translate
+          }}</label>
+          <input
+            formControlName="position"
+            type="number"
+            class="form-control"
+          />
+
+          <label for="deviceId">{{
+            "training.trainingProgramCreateModal.form.steps.device" | translate
+          }}</label>
+          <select formControlName="deviceId" class="form-control">
+            <option *ngFor="let device of availableDevices" [value]="device.id">
+              {{ device.deviceUniqueId }}
+            </option>
+            <option *ngIf="step.value.deviceId" [value]="step.value.deviceId">
+              {{ getDeviceName(step.value.deviceId) }}
+            </option>
+          </select>
+
+          <button
+            type="button"
+            class="btn btn-danger w-100 my-1"
+            (click)="removeStep(i)"
+          >
+            {{
+              "training.trainingProgramCreateModal.form.steps.remove"
+                | translate
+            }}
+          </button>
+        </div>
+      </div>
+
+      <button
+        type="button"
+        class="btn btn-primary w-100 my-1"
+        (click)="addStep()"
+      >
+        {{ "training.trainingProgramCreateModal.form.steps.add" | translate }}
+      </button>
+      <button
+        type="submit"
+        class="btn btn-success w-100 my-1"
+        [disabled]="trainingProgramForm.invalid"
+      >
+        {{ "training.trainingProgramCreateModal.form.submit" | translate }}
+      </button>
+    </form>
+  </mat-dialog-content>
+</div>

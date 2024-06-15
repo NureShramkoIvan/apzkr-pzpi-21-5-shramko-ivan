@@ -1,0 +1,65 @@
+<h2 mat-dialog-title>
+  {{ "training.trainingGroupCreateUpdateModal.title" | translate }}
+</h2>
+<mat-dialog-content>
+  <form [formGroup]="trainingGroupForm">
+    <div class="form-group">
+      <label for="name">{{
+        "training.trainingGroupCreateUpdateModal.form.name" | translate
+      }}</label>
+      <input
+        id="name"
+        type="text"
+        class="form-control"
+        formControlName="name"
+      />
+      <!-- <div
+        *ngIf="trainingGroupForm.get('name')?.hasError('required')"
+        class="text-danger"
+      >
+        Name is required
+      </div> -->
+    </div>
+
+    <div class="form-group">
+      <label for="organization">{{
+        "training.trainingGroupCreateUpdateModal.form.organization" | translate
+      }}</label>
+      <select
+        id="organization"
+        class="form-control"
+        formControlName="organizationId"
+      >
+        <option
+          *ngFor="let organization of organizations"
+          [value]="organization.id"
+        >
+          {{ organization.name }}
+        </option>
+      </select>
+      <!-- <div
+        *ngIf="trainingGroupForm.get('organizationId')?.hasError('required')"
+        class="text-danger"
+      >
+        Organization is required
+      </div> -->
+    </div>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button
+    type="button"
+    class="btn btn-secondary w-100 my-1"
+    (click)="onCancel()"
+  >
+    {{ "training.trainingGroupCreateUpdateModal.form.cancel" | translate }}
+  </button>
+  <button
+    type="button"
+    class="btn btn-primary w-100 my-1"
+    [disabled]="!trainingGroupForm.valid"
+    (click)="onSave()"
+  >
+    {{ "training.trainingGroupCreateUpdateModal.form.submit" | translate }}
+  </button>
+</mat-dialog-actions>

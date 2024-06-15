@@ -1,0 +1,180 @@
+{
+  "core": {
+    "header": {
+      "language": "Мова",
+      "navBar": {
+        "trainingSessions": "Тренувальні сесії",
+        "trainingPrograms": "Тренувальні програми",
+        "trainingGroups": "Тренувальні групи",
+        "organizations": "Організації",
+        "users": "Користувачі",
+        "backups": "Резервні копії"
+      }
+    }
+  },
+  "auth": {
+    "login": {
+      "username": "Iм'я користувача",
+      "password": "Пароль",
+      "signIn": "Увійти"
+    }
+  },
+  "maintenance": {
+    "backups": {
+      "title": "Резервні копії",
+      "createButton": "Створити резервну копію",
+      "table": {
+        "id": "Унікальний номер",
+        "fileName": "Назва файлу",
+        "download": "Завантажити"
+      }
+    },
+    "organizationCreateUpdateModal": {
+      "title": "Створити організацію",
+      "form": {
+        "name": "Назва організації",
+        "submitButton": "Створити"
+      }
+    },
+    "organizations": {
+      "title": "Організації",
+      "createButton": "Додати організацію",
+      "table": {
+        "id": "Унікальний номер",
+        "name": "Назва",
+        "devices": "Переглянути пристрої"
+      }
+    },
+    "userCreateUpdateModal": {
+      "title": "Створити користувача",
+      "form": {
+        "username": "Ім'я користувача",
+        "password": "Пароль",
+        "role": "Роль",
+        "organization": "Організація",
+        "timeZone": "Часова зона",
+        "submitButton": "Створити"
+      }
+    },
+    "users": {
+      "title": "Користувачі",
+      "createButton": "Додати користувача",
+      "table": {
+        "id": "Унікальний номер",
+        "username": "Ім'я користувача",
+        "organization": "Організація",
+        "role": "Роль"
+      }
+    },
+    "viewOrganizationDevicesModal": {
+      "title": "Пристрої організації",
+      "table": {
+        "id": "Унікальний номер",
+        "type": "Тип пристрою",
+        "uniqueId": "Унікальна назва"
+      },
+      "form": {
+        "title": "Додати пристрій",
+        "type": "Тип пристрою",
+        "uniqueId": "Унікальна назва",
+        "submitButton": "Додати"
+      }
+    }
+  },
+  "training": {
+    "trainingGroup": {
+      "title": "Деталі тренувальної групи",
+      "createParticipationButton": "Додати учасника",
+      "table": {
+        "id": "Унікальний номер",
+        "username": "Ім'я користувача",
+        "organization": "Організація"
+      }
+    },
+    "trainingGroupCreateUpdateModal": {
+      "title": "Створити тренувальну групу",
+      "form": {
+        "name": "Назва",
+        "organization": "Організація",
+        "cancel": "Відмінити",
+        "submit": "Створити"
+      }
+    },
+    "trainingGroupParticipationCreate": {
+      "title": "Додати до групи",
+      "table": {
+        "id": "Унікальний номер",
+        "username": "Ім'я користувача",
+        "add": "Додати",
+        "cancel": "Відмінити"
+      }
+    },
+    "trainingGroups": {
+      "title": "Тренувальні групи",
+      "createButton": "Створити тренувальну групу",
+      "table": {
+        "id": "Унікальний номер",
+        "name": "Назва",
+        "organization": "Організація",
+        "view": "Переглянути"
+      }
+    },
+    "trainingProgram": {
+      "title": "Деталі тренувальної програми",
+      "id": "Унікальний номер",
+      "organization": "Організація",
+      "table": {
+        "title": "Етапи програми",
+        "deviceId": "Пристрій",
+        "position": "Позиція"
+      }
+    },
+    "trainingProgramCreateModal": {
+      "title": "Створити тренувальну програму",
+      "form": {
+        "organization": "Організація",
+        "steps": {
+          "title": "Етап",
+          "position": "Позиція",
+          "device": "Пристрій",
+          "remove": "Видалити етап",
+          "add": "Додати етап"
+        },
+        "submit": "Створити"
+      }
+    },
+    "trainingPrograms": {
+      "title": "Тренувальні програми",
+      "createButton": "Створити тренувальну програму",
+      "table": {
+        "id": "Унікальний номер",
+        "organization": "Організація",
+        "view": "Переглянути"
+      }
+    },
+    "trainingSessionCreateModal": {
+      "title": "Створити тренувальну сесію",
+      "time": "Запланувати на",
+      "form": {
+        "program": "Програма",
+        "instructor": "Інструктор",
+        "group": "Група",
+        "cancel": "Відмінити",
+        "submit": "Створити"
+      }
+    },
+    "trainingSessions": {
+      "title": "Тренувальні сесії",
+      "createButton": "Створити тренувальну сесію",
+      "table": {
+        "id": "Унікальний номер",
+        "program": "Програма",
+        "instructor": "Інструктор",
+        "group": "Група",
+        "scheduledAt": "Заплановано на",
+        "start": "Почато",
+        "finish": "Завершено"
+      }
+    }
+  }
+}

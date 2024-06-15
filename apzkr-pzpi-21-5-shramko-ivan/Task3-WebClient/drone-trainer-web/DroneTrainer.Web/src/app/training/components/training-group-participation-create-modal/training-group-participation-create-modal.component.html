@@ -1,0 +1,47 @@
+<h2 mat-dialog-title>
+  {{ "training.trainingGroupParticipationCreate.title" | translate }}
+</h2>
+<mat-dialog-content>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>
+          {{ "training.trainingGroupParticipationCreate.table.id" | translate }}
+        </th>
+        <th>
+          {{
+            "training.trainingGroupParticipationCreate.table.username"
+              | translate
+          }}
+        </th>
+        <!-- <th>Actions</th> -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.id }}</td>
+        <td>{{ user.userName }}</td>
+        <td>
+          <button
+            type="button"
+            class="btn btn-primary"
+            (click)="addUserToGroup(user.id)"
+          >
+            {{
+              "training.trainingGroupParticipationCreate.table.add" | translate
+            }}
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button
+    type="button"
+    class="btn btn-secondary w-100 my-1"
+    (click)="onCancel()"
+  >
+    {{ "training.trainingGroupParticipationCreate.table.cancel" | translate }}
+  </button>
+</mat-dialog-actions>

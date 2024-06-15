@@ -1,0 +1,27 @@
+<div class="training-program">
+  <h2>{{ "training.trainingProgram.title" | translate }}</h2>
+  <p>
+    <strong>{{ "training.trainingProgram.id" | translate }}</strong>
+    {{ program?.id }}
+  </p>
+  <p>
+    <strong>{{ "training.trainingProgram.organization" | translate }}</strong>
+    {{ program?.organizationName }}
+  </p>
+
+  <h3>{{ "training.trainingProgram.table.title" | translate }}</h3>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>{{ "training.trainingProgram.table.deviceId" | translate }}</th>
+        <th>{{ "training.trainingProgram.table.position" | translate }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let step of sortedSteps">
+        <td>{{ step.deviceUniqueId || " - " }}</td>
+        <td>{{ step.position }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

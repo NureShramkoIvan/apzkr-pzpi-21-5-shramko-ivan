@@ -1,0 +1,180 @@
+{
+  "core": {
+    "header": {
+      "language": "Language",
+      "navBar": {
+        "trainingSessions": "Training sessions",
+        "trainingPrograms": "Training programs",
+        "trainingGroups": "Training groups",
+        "organizations": "Organizations",
+        "users": "Users",
+        "backups": "Backups"
+      }
+    }
+  },
+  "auth": {
+    "login": {
+      "username": "Username",
+      "password": "Password",
+      "signIn": "Sign in"
+    }
+  },
+  "maintenance": {
+    "backups": {
+      "title": "Backups",
+      "createButton": "Create backup",
+      "table": {
+        "id": "ID",
+        "fileName": "File name",
+        "download": "Download"
+      }
+    },
+    "organizationCreateUpdateModal": {
+      "title": "Create organization",
+      "form": {
+        "name": "Name",
+        "submitButton": "Submit"
+      }
+    },
+    "organizations": {
+      "title": "Organizations",
+      "createButton": "Add organization",
+      "table": {
+        "id": "ID",
+        "name": "Name",
+        "devices": "View devices"
+      }
+    },
+    "userCreateUpdateModal": {
+      "title": "Create user",
+      "form": {
+        "username": "Username",
+        "password": "Password",
+        "role": "Role",
+        "organization": "Organization",
+        "timeZone": "Time zone",
+        "submitButton": "Submit"
+      }
+    },
+    "users": {
+      "title": "Users",
+      "createButton": "Add user",
+      "table": {
+        "id": "ID",
+        "username": "Username",
+        "organization": "Organization",
+        "role": "Role"
+      }
+    },
+    "viewOrganizationDevicesModal": {
+      "title": "Organization devices",
+      "table": {
+        "id": "ID",
+        "type": "Type",
+        "uniqueId": "Unique ID"
+      },
+      "form": {
+        "title": "Add device",
+        "type": "Type",
+        "uniqueId": "Unique ID",
+        "submitButton": "Submit"
+      }
+    }
+  },
+  "training": {
+    "trainingGroup": {
+      "title": "Training group details",
+      "createParticipationButton": "Add participant",
+      "table": {
+        "id": "ID",
+        "username": "Username",
+        "organization": "Organization"
+      }
+    },
+    "trainingGroupCreateUpdateModal": {
+      "title": "Create training group",
+      "form": {
+        "name": "Name",
+        "organization": "Organization",
+        "cancel": "Cancel",
+        "submit": "Create"
+      }
+    },
+    "trainingGroupParticipationCreate": {
+      "title": "Add to group",
+      "table": {
+        "id": "ID",
+        "username": "Username",
+        "add": "Add",
+        "cancel": "Cancel"
+      }
+    },
+    "trainingGroups": {
+      "title": "Training groups",
+      "createButton": "Create training group",
+      "table": {
+        "id": "ID",
+        "name": "Name",
+        "organization": "Organization",
+        "view": "View details"
+      }
+    },
+    "trainingProgram": {
+      "title": "Training program details",
+      "id": "ID",
+      "organization": "Organization",
+      "table": {
+        "title": "Steps",
+        "deviceId": "Device ID",
+        "position": "Position"
+      }
+    },
+    "trainingProgramCreateModal": {
+      "title": "Create training program",
+      "form": {
+        "organization": "Organization",
+        "steps": {
+          "title": "Step",
+          "position": "Position",
+          "device": "Device",
+          "remove": "Remove step",
+          "add": "Add step"
+        },
+        "submit": "Create"
+      }
+    },
+    "trainingPrograms": {
+      "title": "Training programs",
+      "createButton": "Create training program",
+      "table": {
+        "id": "ID",
+        "organization": "Organization",
+        "view": "View details"
+      }
+    },
+    "trainingSessionCreateModal": {
+      "title": "Create training session",
+      "time": "Scheduled at",
+      "form": {
+        "program": "Program",
+        "instructor": "Instructor",
+        "group": "Group",
+        "cancel": "Cancel",
+        "submit": "Create"
+      }
+    },
+    "trainingSessions": {
+      "title": "Training sessions",
+      "createButton": "Create training session",
+      "table": {
+        "id": "ID",
+        "program": "Program",
+        "instructor": "Instructor",
+        "group": "Group",
+        "scheduledAt": "Scheduled at",
+        "start": "Started at",
+        "finish": "Finished at"
+      }
+    }
+  }
+}

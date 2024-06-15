@@ -1,0 +1,51 @@
+syntax  = "proto3";
+
+option csharp_namespace = "DroneTrainer.Mobile.Services";
+
+import "google/protobuf/empty.proto";
+
+service TrainingSession {
+	rpc StartTrainignSession(StartTrainingSessionRequest) returns (google.protobuf.Empty);
+	rpc EndTrainingSession(EndTrainingSessionRequest) returns (google.protobuf.Empty);
+	rpc StartTrainingSesisonAttempt(StartTrainingSessionAttemptRequest) returns (google.protobuf.Empty);
+	rpc EndTrainingSessionAttempt(EndTrainingSessionAttemptRequest) returns (google.protobuf.Empty);
+	rpc GetUserAttemptIds(GetUserAttemptIdsRequest) returns (GetUserAttemptIdsResponse);
+}
+
+message StartTrainingSessionRequest {
+	int32 session_id = 1;
+	repeated int32 user_ids = 2;
+	repeated string device_ids = 3;
+	string locale = 4;
+}
+
+message EndTrainingSessionRequest {
+	int32 session_id = 1;
+	repeated string device_ids = 2;
+}
+
+message StartTrainingSessionAttemptRequest {
+	int32 session_id = 1;
+	int32 attempt_id = 2;
+	repeated string device_ids = 3;
+}
+
+message EndTrainingSessionAttemptRequest {
+	int32 sesison_id = 1;
+	int32 attempt_id = 2;
+	repeated string device_ids = 3;
+}
+
+message GetUserAttemptIdsRequest {
+	repeated int32 user_ids = 1;
+	int32 session_id = 2;
+}
+
+message GetUserAttemptIdsResponse {
+	repeated UserAttempt user_attempts = 1;
+}
+
+message UserAttempt {
+	int32 user_id = 1;
+	int32 attempt_id = 2;
+}

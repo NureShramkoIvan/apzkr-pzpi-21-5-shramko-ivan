@@ -1,0 +1,81 @@
+<h2 mat-dialog-title>
+  {{ "maintenance.userCreateUpdateModal.title" | translate }}
+</h2>
+<mat-dialog-content class="user-dialog">
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="userName">{{
+        "maintenance.userCreateUpdateModal.form.username" | translate
+      }}</label>
+      <input
+        type="text"
+        class="form-control"
+        id="userName"
+        formControlName="userName"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="password">{{
+        "maintenance.userCreateUpdateModal.form.password" | translate
+      }}</label>
+      <input
+        type="password"
+        class="form-control"
+        id="password"
+        formControlName="password"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="role">{{
+        "maintenance.userCreateUpdateModal.form.role" | translate
+      }}</label>
+      <select class="form-control" id="role" formControlName="role" required>
+        <option *ngFor="let role of roles" [value]="role.value">
+          {{ role.label }}
+        </option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="organizationId">{{
+        "maintenance.userCreateUpdateModal.form.organization" | translate
+      }}</label>
+      <select
+        class="form-control"
+        id="organizationId"
+        formControlName="organizationId"
+        required
+      >
+        <option
+          *ngFor="let organization of organizations"
+          [value]="organization.id"
+        >
+          {{ organization.name }}
+        </option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="userTimeZone">{{
+        "maintenance.userCreateUpdateModal.form.timeZone" | translate
+      }}</label>
+      <select
+        class="form-control"
+        id="userTimeZone"
+        formControlName="userTimeZone"
+        required
+      >
+        <option [value]="1">GMT-6:00</option>
+        <option [value]="2">GMT+9:00</option>
+        <option [value]="3">GMT+2:00</option>
+      </select>
+    </div>
+    <button
+      type="submit"
+      class="btn btn-primary w-100 my-1"
+      [disabled]="userForm.invalid"
+    >
+      {{ "maintenance.userCreateUpdateModal.form.submitButton" | translate }}
+    </button>
+  </form>
+</mat-dialog-content>

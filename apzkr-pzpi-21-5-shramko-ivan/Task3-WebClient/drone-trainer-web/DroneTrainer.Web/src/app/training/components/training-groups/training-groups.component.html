@@ -1,0 +1,29 @@
+<div class="container pt-4">
+  <h2>{{ "training.trainingGroups.title" | translate }}</h2>
+
+  <button class="btn btn-primary mb-3" (click)="openCreateUpdateModal()">
+    {{ "training.trainingGroups.createButton" | translate }}
+  </button>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>{{ "training.trainingGroups.table.id" | translate }}</th>
+        <th>{{ "training.trainingGroups.table.name" | translate }}</th>
+        <th>{{ "training.trainingGroups.table.organization" | translate }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let group of trainingGroups">
+        <td>{{ group.id }}</td>
+        <td>{{ group.name }}</td>
+        <td>{{ group.organizationName }}</td>
+        <td>
+          <button class="btn btn-secondary" (click)="viewGroup(group.id)">
+            {{ "training.trainingGroups.table.view" | translate }}
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
